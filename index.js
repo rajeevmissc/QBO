@@ -8,7 +8,7 @@ const mainRouter = require('./routes/mainRoute');
 const logger = require('./utils/logger');
 
 const app = express();
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
