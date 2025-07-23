@@ -1,0 +1,112 @@
+level info: Aug-19-2023 14:15:46 	User Login Successfully .
+level info: Aug-19-2023 14:16:13 	Trending Blogs Found!
+level info: Aug-19-2023 14:28:20 	User Login Successfully .
+level info: Aug-19-2023 17:54:38 	User Login Successfully .
+level info: Aug-23-2023 16:18:28 	User Login Successfully .
+level info: Aug-24-2023 15:45:42 	user password updated
+level error: Aug-24-2023 15:45:57 	This password you already use in past
+level error: Aug-24-2023 15:46:29 	old password is incorrect
+level info: Aug-24-2023 15:47:05 	user password updated
+level error: Aug-24-2023 15:48:02 	This password you already use in past
+level error: Aug-24-2023 15:48:24 	New password not match with confirm password 
+level info: Aug-24-2023 15:48:28 	user password updated
+level error: Aug-24-2023 15:48:32 	old password is incorrect
+level info: Aug-24-2023 15:48:58 	user password updated
+level info: Sep-06-2023 16:28:52 	User Created Successfully ✔ .
+level info: Sep-06-2023 16:29:46 	User Login Successfully .
+level error: Sep-09-2023 23:07:32 	User is Already Registered with this email
+level info: Sep-09-2023 23:07:39 	User Created Successfully ✔ .
+level info: Mar-05-2025 18:35:32 	User Created Successfully ✔ .
+level info: Mar-05-2025 18:37:53 	User Login Successfully .
+level info: Mar-05-2025 18:44:14 	Password updated successfully .
+level info: Mar-05-2025 18:45:56 	User Login Successfully .
+level info: Mar-05-2025 19:17:21 	User Login Successfully .
+level info: Mar-05-2025 19:17:56 	User profile updated
+level error: Mar-05-2025 19:22:57 	This password you already use in past
+level info: Mar-05-2025 19:23:24 	user password updated
+level error: Mar-05-2025 19:38:53 	Email or Password is incorrect .
+level error: Mar-05-2025 19:39:32 	Email or Password is incorrect .
+level info: Mar-05-2025 19:39:43 	User Login Successfully .
+level info: May-12-2025 16:17:38 	User Created Successfully ✔ .
+level info: May-12-2025 16:20:12 	User Login Successfully .
+level info: May-12-2025 16:25:26 	User Login Successfully .
+level info: May-14-2025 18:19:36 	User Login Successfully .
+level info: May-15-2025 10:52:59 	User Login Successfully .
+level info: May-15-2025 13:42:07 	User Created Successfully ✔ .
+level error: May-15-2025 13:46:50 	Email is not valid
+level info: May-15-2025 13:47:15 	User Login Successfully .
+level info: May-15-2025 14:01:27 	User Login Successfully .
+level info: May-15-2025 15:33:05 	User Login Successfully .
+level info: May-15-2025 16:28:32 	User Login Successfully .
+level info: May-15-2025 16:56:18 	User Login Successfully .
+level info: May-15-2025 16:57:50 	User Login Successfully .
+level info: May-16-2025 10:18:45 	User Login Successfully .
+level info: May-16-2025 11:26:01 	User Created Successfully ✔ .
+level info: May-16-2025 11:26:32 	User Login Successfully .
+level info: May-16-2025 11:29:06 	User Login Successfully .
+level info: May-16-2025 12:02:16 	User Login Successfully .
+level info: May-16-2025 12:46:59 	User Login Successfully .
+level info: May-16-2025 12:51:04 	User Login Successfully .
+level info: May-16-2025 12:56:34 	User Login Successfully .
+level info: May-16-2025 13:16:32 	User Login Successfully .
+level info: May-16-2025 14:08:42 	User Login Successfully .
+level error: May-16-2025 15:06:43 	Error: Missing credentials for "PLAIN"
+level info: May-16-2025 15:11:37 	User Login Successfully .
+level error: May-16-2025 15:23:04 	Error: Failed to send email
+level error: May-16-2025 15:24:23 	Error: Failed to send email
+level error: May-16-2025 15:27:14 	Error: Failed to send email
+level error: May-16-2025 15:31:33 	Error: Bad Request
+level error: May-16-2025 15:35:26 	Error: Bad Request
+level error: May-16-2025 15:38:23 	Error: Bad Request
+level error: May-16-2025 15:40:39 	Error: String or address object expected for `from`
+level error: May-16-2025 15:42:42 	Error: String or address object expected for `from`
+level info: May-16-2025 15:47:49 	Email has been sent successfully to rajeevm@issc.co.in
+level info: May-17-2025 13:20:48 	User Login Successfully .
+level info: May-19-2025 19:03:13 	User Login Successfully .
+level info: May-19-2025 19:13:58 	User Login Successfully .
+level info: May-19-2025 19:29:19 	User Login Successfully .
+level info: May-19-2025 19:31:51 	User Login Successfully .
+level info: May-19-2025 19:32:37 	User Login Successfully .
+level info: May-19-2025 19:35:21 	User Login Successfully .
+level info: May-19-2025 19:36:12 	User Login Successfully .
+level info: May-19-2025 19:37:51 	User Login Successfully .
+level info: May-20-2025 13:25:27 	User Login Successfully .
+level info: May-20-2025 13:26:43 	User Login Successfully .
+level info: May-20-2025 13:28:17 	User Login Successfully .
+level info: May-20-2025 14:24:42 	User Login Successfully .
+level info: May-20-2025 14:26:43 	User Login Successfully .
+level info: May-20-2025 14:46:33 	User Login Successfully .
+level info: May-21-2025 16:22:30 	User Login Successfully .
+level info: May-21-2025 16:26:02 	User Login Successfully .
+level info: May-21-2025 16:27:07 	User Login Successfully .
+level info: Jun-06-2025 17:13:18 	User Login Successfully .
+level info: Jun-06-2025 17:13:47 	User Login Successfully .
+level info: Jun-06-2025 17:20:01 	User Login Successfully .
+level info: Jul-21-2025 15:01:07 	User Login Successfully .
+level info: Jul-21-2025 17:57:37 	User Created Successfully ✔ .
+level info: Jul-21-2025 17:57:43 	User Login Successfully .
+level info: Jul-21-2025 18:01:55 	User Login Successfully .
+level info: Jul-21-2025 18:36:03 	User Created Successfully ✔ .
+level info: Jul-21-2025 18:36:05 	User Login Successfully .
+level error: Jul-21-2025 19:22:53 	Error: Unauthorized
+level error: Jul-21-2025 19:34:56 	Error: sgMail is not a function
+level error: Jul-21-2025 19:43:39 	Error: sgMail is not a function
+level error: Jul-21-2025 19:44:34 	Error: send is not a function
+level error: Jul-21-2025 19:47:57 	Error: sgMail is not a function
+level info: Jul-21-2025 19:49:55 	Email has been sent successfully to rajeevm@issc.co.in
+level info: Jul-21-2025 19:51:36 	Email has been sent successfully to rajeevm@issc.co.in
+level info: Jul-21-2025 20:03:57 	Email has been sent successfully to rajeevm@issc.co.in
+level info: Jul-21-2025 20:07:54 	Password updated successfully .
+level error: Jul-22-2025 11:01:24 	Email or Password is incorrect .
+level error: Jul-22-2025 11:01:30 	Email or Password is incorrect .
+level error: Jul-22-2025 11:02:09 	Email or Password is incorrect .
+level info: Jul-22-2025 11:02:23 	User Login Successfully .
+level error: Jul-22-2025 12:13:52 	Email or Password is incorrect .
+level error: Jul-22-2025 12:14:04 	Email or Password is incorrect .
+level info: Jul-22-2025 12:14:13 	User Login Successfully .
+level error: Jul-22-2025 12:46:45 	Email or Password is incorrect .
+level error: Jul-22-2025 14:57:27 	Email or Password is incorrect .
+level info: Jul-22-2025 14:57:33 	User Login Successfully .
+level info: Jul-22-2025 15:59:21 	User Login Successfully .
+level info: Jul-22-2025 17:20:29 	User Login Successfully .
+level info: Jul-23-2025 10:18:21 	User Login Successfully .
