@@ -20,7 +20,7 @@ const {
 
 const baseUrl =
   QBO_ENVIRONMENT === 'sandbox'
-    ? 'https://sandbox-quickbooks.api.intuit.com'
+    ? 'https://quickbooks.api.intuit.com'
     : 'https://quickbooks.api.intuit.com';
 
 /**
