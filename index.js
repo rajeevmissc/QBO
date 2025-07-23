@@ -31,7 +31,7 @@ app.get('/connect-to-qbo', (req, res) => {
   const state = Buffer.from(Date.now().toString()).toString('base64');
 
   const authUrl = `https://appcenter.intuit.com/connect/oauth2?client_id=${QBO_CLIENT_ID}&redirect_uri=${encodeURIComponent(
-    https://qbo-isscs-projects.vercel.app/qbo-callback
+    QBO_REDIRECT_URI
   )}&response_type=code&scope=${encodeURIComponent(scope)}&state=${state}`;
 
   return res.redirect(authUrl);
