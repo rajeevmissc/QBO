@@ -1,10 +1,11 @@
+// index.js
 const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const serverless = require('serverless-http');
 
 dotenv.config();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -41,13 +42,10 @@ app.get('/connect-to-qbo', (req, res) => {
  */
 app.get('/qbo-callback', async (req, res) => {
   const { code, realmId } = req.query;
-
-  if (!code || !realmId) {
-    return res.status(400).send('Missing code or realmId');
-  }
+  if (!code || !realmId) return res.status(400).send('Missing code or realmId');
 
   try {
-    const response = await axios.post(
+    const tokenRes = await axios.post(
       'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer',
       new URLSearchParams({
         grant_type: 'authorization_code',
@@ -64,17 +62,15 @@ app.get('/qbo-callback', async (req, res) => {
       }
     );
 
-    const { access_token, refresh_token } = response.data;
-
-    // For debugging
+    const { access_token, refresh_token } = tokenRes.data;
     console.log('✅ Access Token:', access_token);
     console.log('🔁 Refresh Token:', refresh_token);
     console.log('🏢 Realm ID:', realmId);
 
     const redirectUrl = `${FRONTEND_REDIRECT_URI || 'http://localhost:3000/oauth-success'}?access_token=${access_token}&realmId=${realmId}`;
     return res.redirect(redirectUrl);
-  } catch (error) {
-    console.error('❌ OAuth Error:', error.response?.data || error.message);
+  } catch (err) {
+    console.error('❌ OAuth Error:', err.response?.data || err.message);
     return res.status(500).send('OAuth Exchange Failed');
   }
 });
@@ -85,13 +81,10 @@ app.get('/qbo-callback', async (req, res) => {
 app.get('/company-info/:realmId', async (req, res) => {
   const { realmId } = req.params;
   const accessToken = req.headers.authorization?.split(' ')[1];
-
-  if (!realmId || !accessToken) {
-    return res.status(400).send('Missing realmId or access token');
-  }
+  if (!realmId || !accessToken) return res.status(400).send('Missing realmId or access token');
 
   try {
-    const companyResponse = await axios.get(
+    const companyRes = await axios.get(
       `${baseUrl}/v3/company/${realmId}/companyinfo/${realmId}`,
       {
         headers: {
@@ -100,13 +93,13 @@ app.get('/company-info/:realmId', async (req, res) => {
         },
       }
     );
-
-    res.json(companyResponse.data);
-  } catch (error) {
-    console.error('❌ Company Info Error:', error.response?.data || error.message);
+    res.json(companyRes.data);
+  } catch (err) {
+    console.error('❌ Company Info Error:', err.response?.data || err.message);
     res.status(500).send('Failed to fetch company info');
   }
 });
 
-// Export for Vercel serverless function
+// Wrap and export for Vercel
 module.exports = app;
+module.exports.handler = serverless(app);
