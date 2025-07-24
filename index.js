@@ -67,7 +67,7 @@ app.get('/qbo-callback', async (req, res) => {
     console.log('🔁 Refresh Token:', refresh_token);
     console.log('🏢 Realm ID:', realmId);
 
-    const redirectUrl = `${FRONTEND_REDIRECT_URI || 'http://localhost:3000/success'}?access_token=${access_token}&realmId=${realmId}`;
+    const redirectUrl = `${FRONTEND_REDIRECT_URI || 'http://localhost:3000'}?access_token=${access_token}&realmId=${realmId}`;
     return res.redirect(redirectUrl);
   } catch (err) {
     console.error('❌ OAuth Error:', err.response?.data || err.message);
