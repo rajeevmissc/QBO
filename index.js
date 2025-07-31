@@ -28,7 +28,15 @@ const baseUrl =
  */
 app.get('/connect-to-qbo', (req, res) => {
   const scope = 'com.intuit.quickbooks.accounting openid profile email phone address';
-  const state = Buffer.from(Date.now().toString()).toString('base64');
+  const { redirect_uri } = req.query;
+
+  // Encode both time and redirect_uri in the state
+  const statePayload = {
+    ts: Date.now(),
+    redirect_uri: redirect_uri || FRONTEND_REDIRECT_URI || 'http://localhost:3000',
+  };
+
+  const state = Buffer.from(JSON.stringify(statePayload)).toString('base64');
 
   const authUrl = `https://appcenter.intuit.com/connect/oauth2?client_id=${QBO_CLIENT_ID}&redirect_uri=${encodeURIComponent(
     QBO_REDIRECT_URI
@@ -37,14 +45,23 @@ app.get('/connect-to-qbo', (req, res) => {
   return res.redirect(authUrl);
 });
 
+
 /**
  * STEP 2: Handle OAuth callback
  */
 app.get('/qbo-callback', async (req, res) => {
-  const { code, realmId } = req.query;
-  if (!code || !realmId) return res.status(400).send('Missing code or realmId');
+  const { code, realmId, state } = req.query;
+  if (!code || !realmId || !state) return res.status(400).send('Missing code, realmId, or state');
+
+  let redirect_uri = FRONTEND_REDIRECT_URI || 'http://localhost:3000';
 
   try {
+    // Decode the redirect_uri from the state
+    const decodedState = JSON.parse(Buffer.from(state, 'base64').toString());
+    if (decodedState.redirect_uri) {
+      redirect_uri = decodedState.redirect_uri;
+    }
+
     const tokenRes = await axios.post(
       'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer',
       new URLSearchParams({
@@ -63,17 +80,15 @@ app.get('/qbo-callback', async (req, res) => {
     );
 
     const { access_token, refresh_token } = tokenRes.data;
-    console.log('✅ Access Token:', access_token);
-    console.log('🔁 Refresh Token:', refresh_token);
-    console.log('🏢 Realm ID:', realmId);
 
-    const redirectUrl = `${FRONTEND_REDIRECT_URI || 'http://localhost:3000'}?access_token=${access_token}&realmId=${realmId}&refresh_token=${refresh_token}`;
-    return res.redirect(redirectUrl);
+    const finalRedirectUrl = `${redirect_uri}?access_token=${access_token}&realmId=${realmId}&refresh_token=${refresh_token}`;
+    return res.redirect(finalRedirectUrl);
   } catch (err) {
     console.error('❌ OAuth Error:', err.response?.data || err.message);
     return res.status(500).send('OAuth Exchange Failed');
   }
 });
+
 
 /**
  * STEP 3: Fetch Company Info
