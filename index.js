@@ -60,6 +60,11 @@ app.get('/qbo-callback', async (req, res) => {
     const decodedState = JSON.parse(Buffer.from(state, 'base64').toString());
     if (decodedState.redirect_uri) {
       redirect_uri = decodedState.redirect_uri;
+
+      // Minimal logic: rewrite '/data-extraction' to '/data-migration'
+      if (redirect_uri.includes('/data-extraction')) {
+        redirect_uri = redirect_uri.replace('/data-extraction', '/data-migration');
+      }
     }
 
     const tokenRes = await axios.post(
