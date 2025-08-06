@@ -96,7 +96,7 @@ app.get('/qbo-callback', async (req, res) => {
     headers: err.response?.headers
   });
     console.error('❌ OAuth Error:', err.response?.data || err.message);
-    return res.status(500).send('OAuth Exchange Failed');
+    return res.status(500).json(err.response?.data || { message: 'OAuth Exchange Failed' });
   }
 });
 
