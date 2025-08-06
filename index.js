@@ -89,6 +89,12 @@ app.get('/qbo-callback', async (req, res) => {
     const finalRedirectUrl = `${redirect_uri}?access_token=${access_token}&realmId=${realmId}&refresh_token=${refresh_token}`;
     return res.redirect(finalRedirectUrl);
   } catch (err) {
+    console.error('❌ OAuth Error:', {
+    message: err.message,
+    status: err.response?.status,
+    data: err.response?.data,
+    headers: err.response?.headers
+  });
     console.error('❌ OAuth Error:', err.response?.data || err.message);
     return res.status(500).send('OAuth Exchange Failed');
   }
